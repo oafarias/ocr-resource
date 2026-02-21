@@ -1,0 +1,34 @@
+<!DOCTYPE html> <!--Define que o documento está usando o HTML5 (Mais recente)-->
+<html lang="pt-br"> <!--Define o idioma da página-->
+
+<head>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="script.js" defer></script>
+    <meta charset="UTF-8"> <!--DEfine a codificação de caracteres como UTF-8 (permite acentos, ç, etc.)-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Torna a página responsiva em dispositivos móveis-->
+    
+    <title>Demonstração de OCR com a Azure AI Vision</title> <!--Título que aparece na aba do navegador-->
+</head>
+<body>
+    <div class="container"> <!--Container principal-->
+        <h1>Demonstração de OCR com Azure AI Vision</h1>
+        <div class="input-section"> <!--Área onde o usuário envia imagem-->
+            <label for="imagem" class="for">Selecione uma imagem (PNG, JPG, PDF)</label>
+            <input type="file" id="imagem" accept="image/png, image/jpeg, application/pdf">
+            <button id="btnOCR">Executar OCR</button>
+        </div>
+        <!--Area dos resultados-->
+        <div class="result-section">
+            <h3>Log e Resultado do Processamento</h3>
+            <div id="div_mensagens" class="div_mensagens">
+                Aguardando envio de imagem...
+            </div>
+
+            <div class="div_resultado_ocr">
+                <h3>Texto Reconhecido:</h3>
+                <textarea id="texto_ocr" rows="8" cols="50" readonly style="width: 100%;"></textarea>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
