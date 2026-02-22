@@ -20,7 +20,7 @@ jobs:
                 docker rm -f $(docker ps -aq) || true
 
                 if [ ! -d ".git" ]; then
-                    echo "Clonando pela primeira vez...""
+                    echo "Clonando pela primeira vez..."
                     git clone https://github.com/oafarias/ocr-resource.git .
                 else
                     echo "Atualizando repositório..."
