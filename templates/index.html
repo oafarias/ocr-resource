@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração de OCR com a Azure AI Vision</title>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Demonstração de OCR com Azure AI Vision</h1>
+
+        <div class="config-section">
+            <h3>Configuração da API Azure</h3>
+            <div class="input-group">
+                <label for="endpoint">Endpoint:</label>
+                <input type="text" id="endpoint" placeholder="https://seu-recurso.cognitiveservices.azure.com/">
+            </div>
+            <div class="input-group">
+                <label for="chave">Chave da API:</label>
+                <input type="password" id="chave" placeholder="Insira sua primary key aqui">
+            </div>
+            <p class="helper-text">* Esses dados não são salvos no servidor.</p>
+        </div>
+
+        <div class="input-section">
+            <label for="imagem">Selecione uma imagem (PNG, JPG, PDF)</label>
+            <input type="file" id="imagem" accept="image/png, image/jpeg, application/pdf">
+            <button id="btnOCR">Executar OCR</button>
+        </div>
+
+        <div class="result-section">
+            <h3>Log e Resultado do Processamento</h3>
+            <div id="div_mensagens" class="div_mensagens">
+                Aguardando configuração e envio de imagem...
+            </div>
+
+            <div class="div_resultado_ocr">
+                <h3>Texto Reconhecido:</h3>
+                <textarea id="texto_ocr" rows="8" readonly></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a hierarquia de fontes do corpo */
+    margin: 0; /* Remove a margem padrão do navegador */
+    padding: 20px; /* Adiciona espaçamento interno em todos os lados */
+    background-color: #E2E6F7; /* Define a cor de fundo da página (azul acinzentado) */
+    color: #3E4150; /* Define a cor padrão do texto */
+}
+
+/*Container Principal*/
+.container{
+    max-width: 900px; /* Limita a largura máxima do elemento */
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    background-color: #FFF; /* Define o fundo como branco */
+    padding: 30px; /* Espaço entre o conteúdo e a borda do container */
+    border-radius: 12px; /* Arredonda os cantos do container */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Aplica uma sombra suave para dar profundidade */
+}
+
+/*Estilização do Título Principal*/
+h1{
+    color: #727CA5; /* Define a cor do título */
+    text-align: center; /* Centraliza o texto do título */
+    margin-bottom: 25px; /* Espaçamento abaixo do título */
+    border-bottom: 2px solid #727ca5; /* Adiciona uma linha decorativa abaixo do texto */
+}
+
+/*Seção de entrada*/
+.input-section{
+    padding: 20px; /* Espaçamento interno da seção */
+    border: 1px solid #ddd; /* Adiciona uma borda fina cinza */
+    border-radius: 8px; /* Arredonda os cantos da borda */
+    margin-bottom: 25px; /* Espaçamento externo inferior */
+    background-color: #e6f2ff; /* Define um fundo azul muito claro */
+}
+
+/**/
+.input-section label{
+    display: block; /* Faz o label ocupar a linha toda */
+    margin-bottom: 10px; /* Espaço entre o rótulo e o campo de entrada */
+    font-weight: bold; /* Deixa o texto do rótulo em negrito */
+}
+
+/**/
+.input-section input[type="file"]{
+    margin-bottom: 15px; /* Espaçamento abaixo do campo de seleção de arquivo */
+}
+
+/*Botão de executar OCR*/
+#btnOCR{
+    background-color: #3E4150; /* Define a cor de fundo escura do botão */
+    color: white; /* Define a cor do texto como branco */
+    padding: 10px 20px; /* Define o tamanho do botão (vertical e horizontal) */
+    border: none; /* Remove a borda padrão do botão */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra ao botão */
+    border-radius: 5px; /* Arredonda levemente os cantos */
+    cursor: pointer; /* Muda o ícone do mouse para "mãozinha" ao passar por cima */
+    font-size: 16px; /* Define o tamanho da fonte do texto do botão */
+    transition: background-color 0.3s; /* Suaviza a mudança de cor em 0.3 segundos */
+}
+
+/*Efeito de passar o mouse*/
+#btnOCR:hover{
+    background-color: #14151A; /* Escurece a cor do botão ao passar o mouse */
+}
+
+/*Sessão de resultados*/
+.result-section{
+    margin-top: 30px; /* Espaçamento acima da seção de resultados */
+    padding: 20px; /* Espaçamento interno */
+    border: 1px solid #ddd; /* Borda fina para delimitar a área */
+    border-radius: 8px; /* Cantos arredondados */
+    background-color: white; /* Garante que o fundo seja branco */
+}
+
+.result-section h3{
+    color: #005a9e; /* Define a cor do subtítulo de resultados */
+    margin-bottom: 15PX; /* Espaçamento abaixo do subtítulo */
+}
+
+/*Área de mensagens (Log)*/
+#div_mensagens{
+    border: 1px solid #ccc; /* Borda cinza claro */
+    background-color: #f9f9f9; /* Fundo levemente cinza para diferenciar */
+    padding: 15px; /* Espaçamento interno para o texto não encostar na borda */
+    min-height: 100px; /* Define uma altura mínima para o elemento */
+    overflow-y: auto; /* Adiciona barra de rolagem vertical se o texto exceder a altura */
+    border-radius: 6px; /* Cantos levemente arredondados */
+    margin-bottom: 20px; /* Espaçamento externo inferior */
+    white-space: pre-wrap; /* Preserva quebras de linha e espaços do texto original */
+}
+
+/*Estilização padrão de mensagens*/
+.message{
+    margin-bottom: 8px; /* Adiciona um pequeno espaço entre as mensagens consecutivas */
+    padding: 5px; /* Define um respiro interno para o conteúdo da mensagem */
+    border-bottom: 1px dotted #eee; /* Doted: Linha pontilhada */
+    font-size: 0.9em; /* Texto levemente menor que o padrão do corpo */
+}
+
+/*Mensagem de erro*/
+.message.error{
+    color: red; /* Define a cor do texto como vermelho para alertas de erro */
+    font-weight: bold; /* Destaca a mensagem de erro com negrito */
+}
+
+/*Mensagem de sucesso*/
+.message.success{
+    color: green; /* Define a cor do texto como verde para indicar operações bem-sucedidas */
+}
+
+/*Mensagem informativa*/
+.message.info{
+    color: #0078d4; /* Define a cor do texto como azul para informações gerais */
+}
+
+/*Container da imagem e marcações do OCR*/
+#div_resultado_ocr{
+    margin-top: 20px; /* Espaçamento externo superior para separar da seção acima */
+    padding: 10px; /* Espaçamento interno entre a borda e o conteúdo */
+    border: 1px solid #ccc; /* Borda cinza clara para delimitar a área de resultado */
+    border-radius: 6px; /* Arredonda levemente os cantos do container */
+}
+
+/*Container da imagem*/
+#image_container{
+    position: relative; /* Define como referência para o posicionamento absoluto das caixas filhas */
+    display: inline-block; /* Ajusta o tamanho do container exatamente ao tamanho da imagem */
+    margin: 0 auto 20px auto; /* Centraliza o container horizontalmente */
+    max-width: 100%; /* Garante que o container não ultrapasse a largura do elemento pai */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites do container */
+    border-radius: 8px; /* Arredonda os cantos do container da imagem */
+    border: 1px solid #ddd; /* Adiciona uma borda fina ao redor do container da imagem */
+}
+
+/*Estilizaçao de imagem*/
+#image_container img{
+    display: block; /* Remove espaços vazios indesejados abaixo da imagem */
+    width: auto; /* Permite que a largura da imagem se ajuste automaticamente */
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do container pai */
+    max-height: 500px; /* Limita a altura da imagem ao tamanho total do container pai */
+    margin: 0 auto; /* Centraliza a imagem dentro do container */
+}
+
+/*Caixa desenhada sobre o texto pelo OCR*/
+.bounding-box-ocr{
+    position: absolute; /* Posiciona a caixa em coordenadas específicas dentro do container relativo */
+    border: 2px solid #ff0000; /* Cria uma borda vermelha sólida para destacar o texto detectado */
+    border-color: rgba(255, 0, 0, 0.15); /* Torna a borda vermelha semi-transparente */
+    pointer-events: none; /* Faz com que cliques "atravessem" a caixa, ignorando interações */
+    box-sizing: border-box; /* Garante que a borda não aumente o tamanho total da caixa */
+    z-index: 10; /* Garante que as marcações fiquem sobrepostas à imagem */
+}
+
+/*Campo onde o texto reconhecido é exibido*/
+#texto_ocr{
+    border: 1px solid #ccc; /* Adiciona uma borda cinza ao redor da área de texto */
+    padding: 10px; /* Espaçamento interno para o texto não encostar nas bordas */
+    border-radius: 6px; /* Arredonda os cantos da área de texto */
+    resize: vertical; /* Permite que o usuário redimensione o campo apenas na vertical */
+}
+
+.config-section {
+    padding: 20px;
+    border: 2px dashed #727CA5;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #f0f4ff;
+}
+
+.config-section h3 {
+    margin-top: 0;
+    color: #3E4150;
+    font-size: 1.1em;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Garante que o padding não estoure a largura */
+}
+
+.helper-text {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Ajuste no Textarea para ser responsivo */
+#texto_ocr {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 12px;
+    border-radius: 6px;
+    resize: vertical;
+    font-family: 'Courier New', Courier, monospace; /* Fonte mono para parecer código/OCR */
+    background-color: #fafafa;
+    box-sizing: border-box;
+}
